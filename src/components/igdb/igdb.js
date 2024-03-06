@@ -1,4 +1,4 @@
-import { twitch_Token } from "@/component/twitch_Token";
+import { twitch_Token } from "@/components/igdb/twitch_Token";
 
 export const igdb = async () => {
   const token = await twitch_Token();
