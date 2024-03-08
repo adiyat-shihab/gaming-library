@@ -9,22 +9,13 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
-      async authorize(credentials) {
-        const authResponse = await fetch("/users/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(credentials),
-        });
-
-        if (!authResponse.ok) {
-          return null;
-        }
-
-        const user = await authResponse.json();
-
-        return user;
+      name: "Credentials",
+      credentials: {
+        email: {},
+        password: {},
+      },
+      async authorize(credentials, req) {
+        return null;
       },
     }),
   ],
