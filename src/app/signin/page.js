@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { WifiLoader } from "react-awesome-loaders";
 
 const Page = () => {
   return (
@@ -17,6 +18,12 @@ const Page = () => {
       className={" h-screen w-screen bg-cover "}
       style={{ backgroundImage: "url('registerBackground.jpg')" }}
     >
+      <WifiLoader
+        background={"transparent"}
+        desktopSize={"150px"}
+        mobileSize={"150px"}
+      />
+
       <Card
         className={
           " text-white border-none bg-[#151B25] w-max mx-auto absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2   shadow-lg"
