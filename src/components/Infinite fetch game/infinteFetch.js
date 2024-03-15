@@ -17,7 +17,7 @@ const InfinteFetch = ({ url }) => {
         `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_KEY}&${url}&page=${page}`,
       );
       const data = await response.json();
-
+      console.log(data);
       setItems((prevItems) => [...prevItems, ...data.results]);
       setPage((prevPage) => prevPage + 1);
     } catch (error) {

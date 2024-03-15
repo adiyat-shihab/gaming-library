@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const GamesList = ({ game }) => {
   return (
-    <Card className="bg-[#0D0F12] rounded-[1.5rem] hover:border-[#F6571E] border-[#242829] w-fit text-white hover:scale-105 transition">
+    <Card className="bg-[#0D0F12]  rounded-[1.5rem] hover:border-[#F6571E] border-[#242829] w-fit text-white hover:scale-[1.02] transition">
       <CardHeader>
         <Image
           src={game.background_image}
