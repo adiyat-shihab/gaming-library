@@ -1,18 +1,39 @@
 "use client";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
-
+import { motion } from "framer-motion";
 const GameNavbar = () => {
   const path = usePathname();
   console.log(path);
   return (
-    <div>
+    <div className={"pt-12 "}>
       <Link href={"/games"}>
-        <Button>Top Picks</Button>
+        <motion.button
+          className={` ${
+            path === "/games" && "bg-primaryOrange"
+          } rounded-[50rem] px-6 py-[0.78rem] transition`}
+          whileTap={{
+            scale: 0.7,
+            transition: { type: "spring", stiffness: 400, damping: 17 },
+          }}
+          whileHover={{ scale: 1 }}
+        >
+          Top Picks
+        </motion.button>
       </Link>
       <Link href={"/games/new-releases"} prefetch={true}>
-        <Button>New Releases</Button>
+        <motion.button
+          className={` ${
+            path === "/games/new-releases" && "bg-primaryOrange"
+          } rounded-[50rem] px-6 py-[0.78rem] transition-all`}
+          whileTap={{
+            scale: 0.7,
+            transition: { type: "spring", stiffness: 400, damping: 17 },
+          }}
+          whileHover={{ scale: 1 }}
+        >
+          New Releases
+        </motion.button>
       </Link>
     </div>
   );

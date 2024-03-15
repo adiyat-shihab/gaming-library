@@ -1,5 +1,7 @@
+import InfinteFetch from "@/components/Infinite fetch game/infinteFetch";
+
 const Page = () => {
-  return <div>new releases</div>;
+  return <InfinteFetch url={""} />;
 };
 
 export default Page;
