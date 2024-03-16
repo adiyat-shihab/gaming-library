@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 const GameNavbar = () => {
   const path = usePathname();
-  console.log(path);
   return (
     <div className={"pt-12 "}>
       <Link href={"/games"}>
@@ -18,7 +17,7 @@ const GameNavbar = () => {
           }}
           whileHover={{ scale: 1 }}
         >
-          Top Picks
+          Best Games
         </motion.button>
       </Link>
       <Link href={"/games/new-releases"} prefetch={true}>
