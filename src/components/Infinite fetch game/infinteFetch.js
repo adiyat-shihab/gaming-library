@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import GameLoader from "@/components/GameLoader";
 import GamesList from "@/components/gameList/GamesList";
 import { useEffect, useState } from "react";
+import { useScroll } from "framer-motion";
 
 const InfinteFetch = ({ url }) => {
   const [items, setItems] = useState([]);
@@ -40,8 +41,9 @@ const InfinteFetch = ({ url }) => {
         hasMore={true}
         loader={<GameLoader />}
         endMessage={<p>No more data to load.</p>}
+        className={"z-10"}
       >
-        <ul className="grid grid-cols-4 gap-7 pt-[3.75rem]">
+        <ul className="grid z-10 grid-cols-4 gap-7 pt-[3.75rem]">
           {items.map((item, index) => (
             <GamesList game={item} key={index} />
           ))}

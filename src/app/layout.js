@@ -3,6 +3,7 @@ import { Chakra_Petch as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import SessionWrapper from "@/components/SessionWrapper";
 import CustomCursor from "@/components/customCursor";
+import Navbar from "@/components/Navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
