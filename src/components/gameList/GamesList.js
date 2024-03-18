@@ -10,9 +10,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 const GamesList = ({ game }) => {
-  console.log(game);
   return (
-    <Card className="bg-[#0D0F12] z-10  rounded-[0.75rem] hover:border-primaryOrange hover:border-[1px]  border-[#242829] w-fit text-white  transition">
+    <Card className="bg-[#0D0F12] z-10  rounded-[0.75rem] hover:border-primaryOrange hover:border-[1px]  border-[#242829] w-fit text-white  transition-all duration-300">
       <CardHeader className={"p-0"}>
         <Image
           src={game.background_image || ""}

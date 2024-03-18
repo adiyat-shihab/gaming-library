@@ -6,12 +6,15 @@ import axios from "axios";
 
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { data } = useSession();
+  const router = useRouter();
   const [games, setGames] = useState([]);
-  console.log(games);
-  const handleOnSearch = async (string) => {
+  const handleOnSearch = async (string = "game") => {
+    console.log(string);
+    string && router.push(`/dashboard/search/${string}`);
     const { data } = await axios.get(
       `https://api.rawg.io/api/games?key=${process.env.NEXT_PUBLIC_RAWG_KEY}&search=${string}&page_size=5`,
     );
@@ -19,14 +22,12 @@ const Navbar = () => {
   };
 
   const handleOnSelect = (item) => {
-    // the item selected
-    console.log(item);
+    router.push(`/dashboard/search/${item.name}`);
   };
 
   const formatResult = (item) => {
-    console.log(item);
     return (
-      <div className={"z-50 flex items-center gap-6 py-2"}>
+      <div className={"z-50 flex items-center gap-6 py-2 cursor-pointer"}>
         {item?.background_image && (
           <Image
             src={item?.background_image}
@@ -64,7 +65,6 @@ const Navbar = () => {
               items={games}
               onSearch={handleOnSearch}
               onSelect={handleOnSelect}
-              autoFocus
               formatResult={formatResult}
               className={" w-[44rem] px-[1.31rem]  focus-visible"}
               placeholder={"Search"}
