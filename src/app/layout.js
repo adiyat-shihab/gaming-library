@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             fontSans.variable,
           )}
         >
-          <CustomCursor>{children}</CustomCursor>
+          {children}
         </body>
       </html>
     </SessionWrapper>

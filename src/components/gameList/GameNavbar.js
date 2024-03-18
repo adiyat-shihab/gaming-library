@@ -7,12 +7,13 @@ const GameNavbar = () => {
   return (
     <div className={"flex justify-between px-10 pt-12 z-10 "}>
       <h1 className={"text-[3.5rem] leading-[4.2rem]  font-semibold"}>Games</h1>
-      <div>
+      <div className={""}>
         <Link href={"/dashboard/games"}>
           <motion.button
             className={` ${
-              path === "/dashboard/games" && "bg-primaryOrange"
-            } rounded-[50rem] px-6 py-[0.78rem] transition`}
+              path === "/dashboard/games" &&
+              "bg-primaryOrange font-medium text-gray-700"
+            } rounded-[50rem] px-6 py-[0.78rem]   transition`}
             whileTap={{
               scale: 0.7,
               transition: { type: "spring", stiffness: 400, damping: 17 },
@@ -25,8 +26,9 @@ const GameNavbar = () => {
         <Link href={"/dashboard/games/new-releases"}>
           <motion.button
             className={` ${
-              path === "/dashboard/games/new-releases" && "bg-primaryOrange"
-            } rounded-[50rem] px-6 py-[0.78rem] transition-all`}
+              path === "/dashboard/games/new-releases" &&
+              "bg-primaryOrange font-medium text-gray-700"
+            } rounded-[50rem] px-6 py-[0.78rem]  transition-all`}
             whileTap={{
               scale: 0.7,
               transition: { type: "spring", stiffness: 400, damping: 17 },

@@ -5,10 +5,8 @@ const Layout = ({ children }) => {
   return (
     <div>
       <div>
-        <ScrollArea className={"h-[90.7vh] z-10  w-full px-8"}>
-          <GameNavbar />
-          {children}
-        </ScrollArea>
+        <GameNavbar />
+        {children}
       </div>
     </div>
   );
